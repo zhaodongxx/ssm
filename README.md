@@ -1,9 +1,9 @@
 # SSM架构(Spring+SpringMVC+Mybatis）
 
-    * Maven
-    * Spring
-    * Spring MVC
-    * Mybatis
+* Maven
+* Spring
+* Spring MVC
+* Mybatis
 
 
 
