@@ -16,10 +16,12 @@ public class AdminController {
     private UserService userService;
 
     Logger log = LoggerFactory.getLogger(AdminController.class);
+    Logger httpLog = LoggerFactory.getLogger("http");
 
     @RequestMapping(value = "/admin")
     public String loginPage() {
         log.error("-----error");
+        httpLog.info("-----http");
         log.info("-----info");
         log.debug("-----debug");
         return "main";

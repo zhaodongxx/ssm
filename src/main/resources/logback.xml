@@ -41,6 +41,41 @@
         </rollingPolicy>
     </appender>
 
+    <appender name="WEB" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/web.log</File>
+
+        <append>true</append>
+        <encoder>
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%5level] [%thread] %logger{0} %msg%n</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>info.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+    <appender name="HTTP" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/http.log</File>
+
+        <append>true</append>
+        <encoder>
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%5level] [%thread] %logger{0} %msg%n</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>info.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
     <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>logs/error.log</file>
 
@@ -67,6 +102,17 @@
             </TimeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
     </appender>
+
+    <!--Logger log = LoggerFactory.getLogger(AdminController.class);-->
+    <logger name="com.zhaodongxx.web" level="DEBUG" additivity="true">
+        <!--<appender-ref ref="WEB"/>-->
+    </logger>
+
+
+    <!--Logger httpLog = LoggerFactory.getLogger("http");-->
+    <logger name="http" level="DEBUG" additivity="true">
+        <appender-ref ref="HTTP"/>
+    </logger>
 
     <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
