@@ -15,9 +15,26 @@ public class UserController {
 
     private UserService userService;
 
-    @RequestMapping(value = "/index.html")
+    @RequestMapping(value = "/login")
     public String loginPage() {
         return "login";
+    }
+
+    @RequestMapping(value = "/register")
+    public String register() {
+        return "register";
+    }
+
+    @RequestMapping(value = "/admin")
+    public String admin() {
+
+        return "admin";
+    }
+
+    @RequestMapping(value = "/index")
+    public String index() {
+
+        return "index";
     }
 
     @RequestMapping(value = "/user.html")
@@ -25,6 +42,7 @@ public class UserController {
         User user = userService.selectByPrimaryKey(userId);
         return new ModelAndView("main", "user", user);
     }
+
 
     @Autowired
     public void setUserService(UserService userService) {
