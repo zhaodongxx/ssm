@@ -38,26 +38,26 @@
     <div class="login-box-body">
         <p class="login-box-msg">登陆账户</p>
 
-        <form action="../../index2.html" method="post">
+        <form action="" method="post">
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" id="email" placeholder="用户名">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" id="password" placeholder="Password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
-                <div class="col-xs-8">
+                <%--<div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> 记住我
+                            <input type="checkbox" id="rememberMe"> 记住我
                         </label>
                     </div>
-                </div>
+                </div>--%>
                 <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">登陆</button>
+                <div class=" col-xs-offset-8 col-xs-4">
+                    <button type="button" id="login" class="btn btn-primary btn-block btn-flat">登陆</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -65,9 +65,14 @@
 
         <div class="social-auth-links text-center">
             <p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa  fa-qq"></i> 使用QQ登陆</a>
-            <a href="#" class="btn btn-block btn-social btn-linkedin btn-flat"><i class="fa  fa-wechat (alias)"></i>
-                使用微信登陆</a>
+            <a href="" class="btn btn-block btn-social btn-google btn-flat">
+                <i class="fa  fa-qq"></i>
+                使用QQ登陆
+            </a>
+            <a href="" class="btn btn-block btn-social btn-linkedin btn-flat">
+                <i class="fa  fa-wechat (alias)"></i>
+                使用微信登陆
+            </a>
         </div>
         <!-- /.social-auth-links -->
 
@@ -86,6 +91,8 @@
 <script src='<c:url value="/resources/js/plugins/bootstrap.min.js"></c:url>'></script>
 <!-- iCheck -->
 <script src='<c:url value="/resources/js/plugins/icheck.min.js"></c:url>'></script>
+<!-- Bootstrap-notify -->
+<script src='<c:url value="/resources/js/plugins/bootstrap-notify.min.js"></c:url>'></script>
 <script>
     $(function () {
         $('input').iCheck({
@@ -94,6 +101,36 @@
             increaseArea: '20%' // optional
         });
     });
+
+    $(function () {
+        $("#login").on("click", function () {
+            var username = $("#email").val();
+            var password = $("#password").val();
+            var data = {username: username, password: password}
+
+            $.ajax({
+                url: "submitLogin",
+                data: data,
+                type: "post",
+                dataType: "json",
+                success: function (result) {
+                    if (result && result.status != 200) {
+                        $.notify(result.message);
+                    } else {
+                        $.notify('登录成功！');
+                        setTimeout(function () {
+                            //登录返回
+                            window.location.href = "admin";
+                        }, 1000)
+                    }
+                },
+                error: function (e) {
+                    $.notify('请看后台Java控制台，是否报错，确定已经配置数据库和Redis');
+                }
+            })
+        })
+
+    })
 </script>
 </body>
 </html>

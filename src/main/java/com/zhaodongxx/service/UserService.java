@@ -2,6 +2,7 @@ package com.zhaodongxx.service;
 
 import com.zhaodongxx.domain.User;
 import com.zhaodongxx.mapper.UserMapper;
+import com.zhaodongxx.mapper.UserMapperCustom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,14 +13,16 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private UserMapper userMapper;
+    private UserMapperCustom userMapperCustom;
 
     @Autowired
-    public UserService(UserMapper userMapper) {
+    public UserService(UserMapper userMapper, UserMapperCustom userMapperCustom) {
         this.userMapper = userMapper;
+        this.userMapperCustom = userMapperCustom;
     }
 
-    public User selectByPrimaryKey(int userId) {
-        User user = userMapper.selectByPrimaryKey(userId);
+    public User selectByUsername(String username) {
+        User user = userMapperCustom.findUserByName(username);
 
         return user;
     }

@@ -5,7 +5,10 @@ import com.zhaodongxx.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by zhaod on 2017/7/6 18:21
@@ -18,6 +21,27 @@ public class UserController {
     @RequestMapping(value = "/login")
     public String loginPage() {
         return "login";
+    }
+
+    @RequestMapping(value = "/submitLogin")
+    @ResponseBody
+    public Map<String, Object> submitLogin(String username, String password) {
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        User user = userService.selectByUsername(username);
+
+        if (user != null) {
+            if (user.getPassword().equals(password)) {
+                resultMap.put("status", 200);
+            } else {
+                resultMap.put("status", 500);
+                resultMap.put("message", "密码错误");
+            }
+        } else {
+            resultMap.put("status", 500);
+            resultMap.put("message", "用户名不存在");
+        }
+
+        return resultMap;
     }
 
     @RequestMapping(value = "/register")
@@ -37,11 +61,11 @@ public class UserController {
         return "index";
     }
 
-    @RequestMapping(value = "/user.html")
+    /*@RequestMapping(value = "/user.html")
     public ModelAndView getUserById(int userId) {
-        User user = userService.selectByPrimaryKey(userId);
-        return new ModelAndView("main", "user", user);
-    }
+      //  User user = userService.selectByUsername(userId);
+       // return new ModelAndView("main", "user", user);
+    }*/
 
 
     @Autowired

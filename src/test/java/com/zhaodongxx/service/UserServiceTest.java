@@ -1,6 +1,5 @@
 package com.zhaodongxx.service;
 
-import com.zhaodongxx.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class UserServiceTest {
 
     @Test
     public void selectByPrimaryKeyTest() throws Exception {
-        User user  = userService.selectByPrimaryKey(1);
+        //User user  = userService.selectByPrimaryKey(1);
 
     }
 
