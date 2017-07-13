@@ -6,6 +6,7 @@
 * Mybatis
 * Bootstrap
 * AdminLTE
+* Shiro
 
 
 
