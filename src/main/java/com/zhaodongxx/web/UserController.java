@@ -56,26 +56,10 @@ public class UserController {
     @RequestMapping(value = "/admin")
     public String admin() {
 
-        return "admin";
+        return "login";
     }
 
-    @RequestMapping(value = "/index")
-    public String index() {
 
-        return "index";
-    }
-
-    /*@RequestMapping(value = "/user.html")
-    public ModelAndView getUserById(int userId) {
-      //  User user = userService.selectByUsername(userId);
-       // return new ModelAndView("main", "user", user);
-    }*/
-
-
-   /* @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }*/
 
     @RequestMapping(value = "*")
     public String f() {
