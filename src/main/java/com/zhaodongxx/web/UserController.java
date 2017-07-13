@@ -1,14 +1,14 @@
 package com.zhaodongxx.web;
 
+import com.zhaodongxx.bean.Result;
 import com.zhaodongxx.domain.User;
 import com.zhaodongxx.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.zhaodongxx.util.ResultGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import javax.annotation.Resource;
 
 /**
  * Created by zhaod on 2017/7/6 18:21
@@ -16,6 +16,7 @@ import java.util.Map;
 @Controller
 public class UserController {
 
+    @Resource
     private UserService userService;
 
     @RequestMapping(value = "/login")
@@ -25,23 +26,19 @@ public class UserController {
 
     @RequestMapping(value = "/submitLogin")
     @ResponseBody
-    public Map<String, Object> submitLogin(String username, String password) {
-        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        User user = userService.selectByUsername(username);
+    public Result<String> submitLogin(String username, String password) {
 
+        User user = userService.selectByUsername(username);
         if (user != null) {
             if (user.getPassword().equals(password)) {
-                resultMap.put("status", 200);
+                return ResultGenerator.genSuccessResult();
             } else {
-                resultMap.put("status", 500);
-                resultMap.put("message", "密码错误");
+                return ResultGenerator.genFailResult("密码错误");
             }
         } else {
-            resultMap.put("status", 500);
-            resultMap.put("message", "用户名不存在");
+            return ResultGenerator.genFailResult("用户不存在");
         }
-
-        return resultMap;
+        //return ResultGenerator.genSuccessResult();
     }
 
     @RequestMapping(value = "/register")
@@ -68,9 +65,9 @@ public class UserController {
     }*/
 
 
-    @Autowired
+   /* @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
-    }
+    }*/
 
 }
