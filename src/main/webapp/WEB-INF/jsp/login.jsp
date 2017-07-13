@@ -120,7 +120,7 @@
                         $.notify('登录成功！');
                         setTimeout(function () {
                             //登录返回
-                            window.location.href = "admin";
+                            //window.location.href = "admin";
                         }, 1000)
                     }
                 },
