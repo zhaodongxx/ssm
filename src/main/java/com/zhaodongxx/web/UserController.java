@@ -70,4 +70,9 @@ public class UserController {
         this.userService = userService;
     }*/
 
+    @RequestMapping(value = "*")
+    public String f() {
+
+        return "404";
+    }
 }

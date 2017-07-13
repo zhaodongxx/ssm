@@ -15,11 +15,11 @@
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href='<c:url value="/resources/css/plugins/bootstrap.min.css"></c:url>'>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href='<c:url value="/resources/css/font/font-awesome.min.css"></c:url>'>
+    <link rel="stylesheet" href='<c:url value="/resources/css/fonts/font-awesome.min.css"></c:url>'>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href='<c:url value="/resources/css/font/ionicons.min.css"></c:url>'>
+    <link rel="stylesheet" href='<c:url value="/resources/css/fonts/ionicons.min.css"></c:url>'>
     <!-- Theme style -->
     <link rel="stylesheet" href='<c:url value="/resources/css/plugins/AdminLTE.min.css"></c:url>'>
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -30,59 +30,38 @@
     <link rel="stylesheet" href='<c:url value="/resources/css/plugins/iCheck/square/blue.css"></c:url>'>
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-    <%--<div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
-    </div>--%>
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <p class="login-box-msg">登陆账户</p>
+<!-- Main content -->
+<section class="content">
+    <div class="error-page">
+        <h2 class="headline text-yellow"> 404</h2>
 
-        <form action="" method="post">
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control" id="email" placeholder="用户名">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="row">
-                <%--<div class="col-xs-8">
-                    <div class="checkbox icheck">
-                        <label>
-                            <input type="checkbox" id="rememberMe"> 记住我
-                        </label>
+        <div class="error-content">
+            <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
+
+            <p>
+                We could not find the page you were looking for.
+                Meanwhile, you may <a href="../../index.html">return to dashboard</a> or try using the search form.
+            </p>
+
+            <form class="search-form">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search">
+
+                    <div class="input-group-btn">
+                        <button type="submit" name="submit" class="btn btn-warning btn-flat"><i
+                                class="fa fa-search"></i>
+                        </button>
                     </div>
-                </div>--%>
-                <!-- /.col -->
-                <div class=" col-xs-offset-8 col-xs-4">
-                    <button type="button" id="login" class="btn btn-primary btn-block btn-flat">登陆</button>
                 </div>
-                <!-- /.col -->
-            </div>
-        </form>
-
-        <div class="social-auth-links text-center">
-            <p>- OR -</p>
-            <a href="" class="btn btn-block btn-social btn-google btn-flat">
-                <i class="fa  fa-qq"></i>
-                使用QQ登陆
-            </a>
-            <a href="" class="btn btn-block btn-social btn-linkedin btn-flat">
-                <i class="fa  fa-wechat (alias)"></i>
-                使用微信登陆
-            </a>
+                <!-- /.input-group -->
+            </form>
         </div>
-        <!-- /.social-auth-links -->
-
-        <a href="#">我忘记了密码</a><br>
-        <a href="register" class="text-center">注册新会员</a>
-
+        <!-- /.error-content -->
     </div>
-    <!-- /.login-box-body -->
-</div>
-<!-- /.login-box -->
+    <!-- /.error-page -->
+</section>
+<!-- /.content -->
+
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.2.3 -->
