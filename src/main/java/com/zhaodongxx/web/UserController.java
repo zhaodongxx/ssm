@@ -1,9 +1,14 @@
 package com.zhaodongxx.web;
 
 import com.zhaodongxx.bean.Result;
-import com.zhaodongxx.domain.User;
 import com.zhaodongxx.service.UserService;
 import com.zhaodongxx.util.ResultGenerator;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,6 +20,8 @@ import javax.annotation.Resource;
  */
 @Controller
 public class UserController {
+
+    Logger log = LoggerFactory.getLogger(UserController.class);
 
     @Resource
     private UserService userService;
@@ -28,17 +35,17 @@ public class UserController {
     @ResponseBody
     public Result<String> submitLogin(String username, String password) {
 
-        User user = userService.selectByUsername(username);
-        if (user != null) {
-            if (user.getPassword().equals(password)) {
-                return ResultGenerator.genSuccessResult();
-            } else {
-                return ResultGenerator.genFailResult("密码错误");
-            }
-        } else {
-            return ResultGenerator.genFailResult("用户不存在");
+        Result result;
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+        try {
+            subject.login(token);
+            result = ResultGenerator.genSuccessResult();
+        } catch (AuthenticationException e) {
+            log.error("账号或密码错误");
+            result = ResultGenerator.genFailResult("账号或密码错误");
         }
-        //return ResultGenerator.genSuccessResult();
+        return result;
     }
 
     @RequestMapping(value = "/register")
