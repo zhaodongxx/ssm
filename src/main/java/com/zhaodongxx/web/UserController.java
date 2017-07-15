@@ -53,13 +53,17 @@ public class UserController {
         return "register";
     }
 
+    @RequestMapping(value = "/index")
+    public String index() {
+
+        return "index";
+    }
+
     @RequestMapping(value = "/admin")
     public String admin() {
 
-        return "login";
+        return "admin";
     }
-
-
 
     @RequestMapping(value = "*")
     public String f() {

@@ -11,11 +11,11 @@
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href='<c:url value="/resources/css/plugins/bootstrap.min.css"></c:url>'>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href='<c:url value="/resources/css/font/font-awesome.min.css"></c:url>'>
+    <link rel="stylesheet" href='<c:url value="/resources/css/fonts/font-awesome.min.css"></c:url>'>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href='<c:url value="/resources/css/font/ionicons.min.css"></c:url>'>
+    <link rel="stylesheet" href='<c:url value="/resources/css/fonts/ionicons.min.css"></c:url>'>
     <!-- Theme style -->
     <link rel="stylesheet" href='<c:url value="/resources/css/plugins/AdminLTE.min.css"></c:url>'>
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter

@@ -1,0 +1,232 @@
+body {
+    padding-top: 70px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+li {
+    line-height: 20px;
+}
+
+form.navbar-search {
+    display: inline-block;
+}
+
+a.navbar-brand {
+    padding-top: 10px;
+}
+
+.index .main {
+    padding-top: 40px;
+    padding-right: 0;
+}
+
+.index .main .recommend-collection .collection {
+    display: inline-block;
+    margin: 0 18px 18px 0;
+    min-height: 32px;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.index .main .recommend-collection .collection img {
+    width: 32px;
+    height: 32px;
+}
+
+.index .main .recommend-collection .collection .name {
+    display: inline-block;
+    padding: 0 11px 0 6px;
+    font-size: 14px;
+}
+
+.index .main .recommend-collection {
+    margin-bottom: 20px;
+}
+
+.note-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.note-list li {
+    position: relative;
+    width: 100%;
+    margin: 0 0 17px;
+    padding: 0 2px 17px 0;
+    border-bottom: 1px solid #f0f0f0;
+    word-wrap: break-word;
+}
+
+.note-list .have-img .wrap-img {
+    position: absolute;
+    top: 50%;
+    margin-top: -58px;
+    right: 0;
+    bottom: 40px;
+    width: 125px;
+    height: 100px;
+}
+
+.note-list .have-img .wrap-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+}
+
+.note-list .have-img > div {
+    padding-right: 135px;
+}
+
+.note-list .author {
+    margin-bottom: 14px;
+    font-size: 13px;
+}
+
+.note-list .author .avatar, .note-list .author .name {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.note-list .author .avatar {
+    margin: 0 5px 0 0;
+}
+
+.note-list .author a {
+    color: #333;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    display: block;
+    cursor: pointer;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+.note-list .author .name span {
+    display: inline-block;
+    padding-left: 3px;
+    color: #969696;
+}
+
+.note-list .author a {
+    color: #333;
+}
+
+.note-list .title {
+    margin: -7px 0 4px;
+    display: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.note-list .abstract {
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.note-list .meta {
+    padding-right: 0 !important;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.note-list .meta a, .note-list .meta a:hover {
+    transition: .1s ease-in;
+    -webkit-transition: .1s ease-in;
+    -moz-transition: .1s ease-in;
+    -o-transition: .1s ease-in;
+    -ms-transition: .1s ease-in;
+}
+
+.note-list .meta a {
+    margin-right: 10px;
+    color: #b4b4b4;
+}
+
+.note-list .collection-tag, .note-list .collection-tag:hover {
+    transition: .1s ease-in;
+    -webkit-transition: .1s ease-in;
+    -moz-transition: .1s ease-in;
+    -o-transition: .1s ease-in;
+    -ms-transition: .1s ease-in;
+}
+
+.note-list .collection-tag {
+    padding: 2px 6px;
+    color: #ea6f5a !important;
+    border: 1px solid rgba(236, 97, 73, .7);
+    border-radius: 3px;
+}
+
+a {
+    cursor: pointer;
+}
+
+a, body {
+    color: #333;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a {
+    background-color: transparent;
+}
+
+.iconfont {
+    font-family: iconfont !important;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: 400 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.note-list .meta span {
+    margin-right: 10px;
+    color: #b4b4b4;
+}
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+}
+
+.side-tool > ul .function-button, .side-tool > ul .js-submit-button {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    display: block;
+}
