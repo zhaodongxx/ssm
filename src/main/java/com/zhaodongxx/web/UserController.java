@@ -61,7 +61,6 @@ public class UserController {
 
     @RequestMapping(value = "/admin")
     public String admin() {
-
         return "admin";
     }
 

@@ -27,7 +27,7 @@
                 /subLogin=anon
                 /login=anon
                 <!--authc表示需要认证 没有进行身份认证是不能进行访问的-->
-                /admin*=authc
+                <!--/admin*=authc-->
                 /student=roles[teacher]
                 /teacher=perms["user:create"]
             </value>
