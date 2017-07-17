@@ -12,6 +12,10 @@ public class LogBackSimpleTest {
 
     public static void main(String[] args) {
 
-        log.info("this is logback demo");
+        //log.info("this is logback demo");
+
+
+
+
     }
 }
