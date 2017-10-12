@@ -66,7 +66,6 @@ public class UserController {
 
     @RequestMapping(value = "*")
     public String f() {
-
         return "404";
     }
 }

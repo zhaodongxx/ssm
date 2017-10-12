@@ -82,6 +82,7 @@
     </div>
     <!-- /.login-box-body -->
 </div>
+<a id="index" href="/index.html">登录</a>
 <!-- /.login-box -->
 <!-- REQUIRED JS SCRIPTS -->
 
@@ -114,13 +115,13 @@
                 type: "post",
                 dataType: "json",
                 success: function (result) {
-                    if (result && result.status != 200) {
+                    if (result && result.code != 200) {
                         $.notify(result.message);
                     } else {
                         $.notify('登录成功！');
                         setTimeout(function () {
-                            //登录返回
-                            window.location.href = "admin";
+                            $.notify('正在跳转！');
+                            window.location.href = "index";
                         }, 1000)
                     }
                 },

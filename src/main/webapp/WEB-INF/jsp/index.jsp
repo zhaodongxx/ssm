@@ -56,7 +56,7 @@
             </form>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html">登陆</a></li>
+                <li><a href="/login.html">登陆</a></li>
                 <li><a href="../navbar-static-top/">写文章</a></li>
             </ul>
         </div><!--/.nav-collapse -->

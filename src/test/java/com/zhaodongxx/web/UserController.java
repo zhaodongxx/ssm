@@ -18,7 +18,7 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = "/user/${userId}.html")
+    //@RequestMapping(value = "/user/${userId}.html")
    /* public ModelAndView getUserById(@PathVariable int userId) {
         User user = userService.selectByPrimaryKey(1);
         return new ModelAndView("main", "user", user);
